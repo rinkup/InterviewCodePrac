@@ -6,7 +6,6 @@
 
 function uniqueSubstring($inputString){
 	$subString = '';
-	$tmpLongestSting = '';
 	$longestString = '';
 	$inputStringA = str_split($inputString);
 	for($i=0; $i<count($inputStringA); $i++){
@@ -19,7 +18,6 @@ function uniqueSubstring($inputString){
 			}
 			$subString = $inputStringA[$i];
 		}
-//	echo $inputStringA[$i];
 	}	
 	return $longestString.strlen($longestString);	
 }
