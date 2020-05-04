@@ -1,0 +1,60 @@
+PROB::
+MVP: 
+----
+
+Please write an application that serves an API end point to fetch and create members from and to the apps local db. 
+
+Use the attached members_data.csv file to load the member info into the app. 
+
+
+The applications should have end points to do the following:
+1. get all members for a given account
+2. get member by:
+    - id
+    - phone_number
+    - client_member_id  (this is equivalaent to a medical record number, or mrn)
+3. create new member
+
+
+
+
+
+Extra:
+------
+
+Let's assume we want to use this API to upload a csv file
+reading the file and adding the members line by line will be a slow process. 
+so we want to introduce the concept of batch uploads into this API
+
+Some of the files we receive have duplicate members, or different members with the same phone number or same client_member_id
+refer to member_data_with_duplicate_records.csv for example.
+
+We want to enforce uniqueness on phone_number and client_member_id per account. 
+
+Please implement or write out how you would design a csv upload feature that uses the batch API that enforces uniqueness on phone_number and client_member_id per account.
+
+
+Note:
+- we receive files up to 5 million rows
+
+
+
+========================== SOLUTION ========================================
+
+APP is using FLASK, SQLALCHEMY, SQLITE, PANDAS
+
+Run source .env to get environment variables
+
+command to set up database
+$python3 database.py (this will create test_app.db with members table)
+
+install sqlite3 to check database
+
+Run app.py to run server
+
+Now you can do curl request
+examples: curl  http://127.0.0.1:5000/upload_members  -F file=@PATH/members.csv
+
+curl  http://127.0.0.1:5000/get_member_by_client_member_id/6808068
+
+curl  http://127.0.0.1:5000/get_member_by_phone_number/9116572700
