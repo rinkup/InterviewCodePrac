@@ -1,2 +1,2 @@
 # InterviewCodePrac
-Interview questions solutions in Php
+Interview questions solutions in Php and Python
