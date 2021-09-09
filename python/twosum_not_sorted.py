@@ -10,6 +10,6 @@ def twoSum(num, target):
             return [output[diff], index]
         output[value] = index
     return
-num = [2, 1, 5, 3]
+num = [2, 2, 1, 5, 3]
 target = 5
 print(twoSum(num, target))

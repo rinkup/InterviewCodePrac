@@ -14,5 +14,5 @@ def letter_combinations(digits):
     return pre_digit
 
 
-digit = '23456'
+digit = '234'
 print(letter_combinations(digit))
